@@ -33,5 +33,16 @@ def main():
     city_name = input("Enter the city name: ")
     location_key = get_location_key(city_name)
 
+if location_key:
+        weather_data = get_weather_data(location_key)
+        if weather_data:
+            current_weather = weather_data[0]
+            print(f"Current temperature in {city_name}: {current_weather['Temperature']['Metric']['Value']}°C")
+        else:
+            print("Weather data not available.")
+
+if __name__ == "__main__":
+    main()
+
     
 
