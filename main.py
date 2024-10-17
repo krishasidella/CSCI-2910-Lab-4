@@ -29,3 +29,9 @@ def get_weather_data(location_key):
     response = requests.get(url, params=params)
     return response.json()
 
+def main():
+    city_name = input("Enter the city name: ")
+    location_key = get_location_key(city_name)
+
+    
+
