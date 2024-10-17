@@ -21,3 +21,11 @@ def get_location_key(city_name):
     else:
         print("City not found.")
         return None
+        
+def get_weather_data(location_key):
+    """Fetch current weather data for the specified location key."""
+    url = f"{BASE_URL}/currentconditions/v1/{location_key}"
+    params = {'apikey': API_KEY}
+    response = requests.get(url, params=params)
+    return response.json()
+
